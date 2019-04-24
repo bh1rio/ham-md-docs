@@ -34,8 +34,10 @@ For quick reference, here’s a short list of features and capabilities added to
 * Expanded and improved UDP messages sent to companion programs
 * Bug fixes and other minor tweaks to user interface
 
+> :warning:
 > Note that for FT8 and MSK144 there is no backward compatibility with WSJT-X 1.9.1 and earlier. Everyone using these modes should upgrade to WSJT-X 2.0 by January 1, 2019.
 
+> :warning:
 > WSJT-X Version 2.0 drops support for Apple Mac OS X 10.9 (Mavericks). It is possible to build from source for this operating system version but the DMG installer package requires 10.10 or later.
 
 ### 1.2. Documentation Conventions
@@ -51,122 +53,128 @@ In this manual the following icons call attention to particular types of informa
 > :warning:
 > Warnings about usage that could lead to undesired consequences.
 
-1.3. How You Can Contribute
+### 1.3. How You Can Contribute
 
-WSJT-X is part of an open-source project released under the GNU General Public License (GPLv3). If you have programming or documentation skills or would like to contribute to the project in other ways, please make your interests known to the development team. The project’s source-code repository can be found at SourceForge, and communication among the developers takes place on the email reflector wsjt-devel@lists.sourceforge.net. Bug reports and suggestions for new features, improvements to the WSJT-X User Guide, etc., may also be sent to the WSJT Group email reflector. You must join the relevant group before posting to either email list.
-2. System Requirements
+WSJT-X is part of an open-source project released under the [GNU General Public License](http://www.gnu.org/licenses/gpl-3.0.txt) (GPLv3). If you have programming or documentation skills or would like to contribute to the project in other ways, please make your interests known to the development team. The project’s source-code repository can be found at [SourceForge](https://sourceforge.net/p/wsjt/wsjtx/ci/master/tree/), and communication among the developers takes place on the email reflector [wsjt-devel@lists.sourceforge.net](mailto:wsjt-devel@lists.sourceforge.net). Bug reports and suggestions for new features, improvements to the WSJT-X User Guide, etc., may also be sent to the [WSJT Group](https://groups.yahoo.com/neo/groups/wsjtgroup/info) email reflector. You must join the relevant group before posting to either email list.
 
-    SSB transceiver and antenna
+## 2. System Requirements
 
-    Computer running Windows (XP or later), Linux, or OS X
+* SSB transceiver and antenna
+* Computer running Windows (XP or later), Linux, or OS X
+* 1.5 GHz or faster CPU and 200 MB of available memory; faster machines are better
+* Monitor with at least 1024 x 780 resolution
+* Computer-to-radio interface using a serial port or equivalent USB device for T/R switching, or CAT control, or VOX, as required for your radio-to-computer connections
+* Audio input and output devices supported by the operating system and configured for sample rate 48000 Hz, 16 bits
+* Audio or equivalent USB connections between transceiver and computer
+* A means for synchronizing the computer clock to UTC within ±1 second
 
-    1.5 GHz or faster CPU and 200 MB of available memory; faster machines are better
-
-    Monitor with at least 1024 x 780 resolution
-
-    Computer-to-radio interface using a serial port or equivalent USB device for T/R switching, or CAT control, or VOX, as required for your radio-to-computer connections
-
-    Audio input and output devices supported by the operating system and configured for sample rate 48000 Hz, 16 bits
-
-    Audio or equivalent USB connections between transceiver and computer
-
-    A means for synchronizing the computer clock to UTC within ±1 second
-
-3. Installation
+## 3. Installation
 
 Installation packages for released versions on Windows, Linux, and OS X are found on the WSJT Home Page. Click on the WSJT-X link at the left margin and select the appropriate package for your operating system.
-3.1. Windows
+
+### 3.1. Windows
 
 Download and execute the package file wsjtx-2.0.1-win32.exe, following these instructions:
 
-    Install WSJT-X into its own directory, for example C:\WSJTX or ` C:\WSJT\WSJTX`, rather than the conventional location C:\Program Files (x86)\WSJTX.
+* Install *WSJT-X* into its own directory, for example C:\WSJTX or \` C:\WSJT\WSJTX\`, rather than the conventional location C:\Program Files (x86)\WSJTX.
+* All program files relating to *WSJT-X* will be stored in the chosen installation directory and its subdirectories.
+* Logs and other writeable files will normally be found in the directory C:\Users\<username>\AppData\Local\WSJT-X.
 
-    All program files relating to WSJT-X will be stored in the chosen installation directory and its subdirectories.
+> :bell:	
+> Your computer may be configured so that this directory is "invisible". It’s there, however, and accessible. An alternative (shortcut) directory name is "%LocalAppData%\WSJT-X\".
 
-    Logs and other writeable files will normally be found in the directory
+* The built-in Windows facility for time synchronization is usually not adequate. We recommend the program *Meinberg NTP* (see [Network Time Protocol Setup](http://www.satsignal.eu/ntp/setup.html) for downloading and installation instructions) or *Dimension 4* from [Thinking Man Software](http://www.thinkman.com/dimension4/). Recent versions of Windows 10 are now shipped with a more capable Internet time synchronization service that is suitable if configured appropriately.
+![WSJT-X LoTW download TLS error](images/3-1.png)
 
-C:\Users\<username>\AppData\Local\WSJT-X.
-	Your computer may be configured so that this directory is “invisible”. It’s there, however, and accessible. An alternative (shortcut) directory name is "%LocalAppData%\WSJT-X\".
+* From this version onward *WSJT-X* requires the *OpenSSL* libraries to be installed. Suitable libraries may already be installed on your system, if they are not you will see this error shortly after startup. To fix this you need to install the *OpenSSL* libraries.
+    * You can download a suitable *OpenSSL* package for from [Windows OpenSSL Packages](https://slproweb.com/products/Win32OpenSSL.html), you need the latest **Win32 v1.0.2 Lite** version (Note it is the Win32 package even if you are using a 64-bit Windows operating system) which at the time of writing was [Win32 OpenSSL Lite Package](https://slproweb.com/download/Win32OpenSSL_Light-1_0_2q.exe).
+    * Install the package and accept the default options, including the option to copy the *OpenSSL* DLLs to the Windows system directory (this is important).
 
-    The built-in Windows facility for time synchronization is usually not adequate. We recommend the program Meinberg NTP (see Network Time Protocol Setup for downloading and installation instructions) or Dimension 4 from Thinking Man Software. Recent versions of Windows 10 are now shipped with a more capable Internet time synchronization service that is suitable if configured appropriately.
+> :loudspeaker:
+> If you still get the same network error after installing the *OpenSSL* libraries then you also need to install the [Microsoft VC++ 2013 Redistributable](https://www.microsoft.com/en-ph/download/details.aspx?id=40784) component. From the download page select ` vcredist_x86.exe ` and run it to install.
 
-    <em>WSJT-X</em> LoTW download TLS error From this version onward WSJT-X requires the OpenSSL libraries to be installed. Suitable libraries may already be installed on your system, if they are not you will see this error shortly after startup. To fix this you need to install the OpenSSL libraries.
+> :loudspeaker:
+> If you cannot install the *OpenSSL* libraries or do not have an Internet connection on the computer used to run *WSJT-X* 2.0, you can download the *LoTW* file manually. Go to https://lotw.arrl.org/lotw-user-activity.csv in a web browser, download the file, then move it to the *WSJT-X* log files directory. This directory can be opened by selecting **File | Open log directory**.
 
-        You can download a suitable OpenSSL package for from Windows OpenSSL Packages, you need the latest Win32 v1.0.2 Lite version (Note it is the Win32 package even if you are using a 64-bit Windows operating system) which at the time of writing was Win32 OpenSSL Lite Package.
+* *WSJT-X* expects your sound card to do its raw sampling at 48000 Hz. To ensure that this will be so when running under recent versions of Windows, open the system’s **Sound** control panel and select in turn the **Recording** and **Playback** tabs. Click on **Properties**, then **Advanced**, and select **16 bit, 48000 Hz (DVD Quality)**. Switch of all audio enhancement features for these devices.
 
-        Install the package and accept the default options, including the option to copy the OpenSSL DLLs to the Windows system directory (this is important).
+* You can uninstall *WSJT-X* by clicking its **Uninstall** link in the Windows **Start** menu, or by using **Uninstall a Program** on the Windows Control Panel Programs and Features option or in Settings Apps on Windows 10.
 
-	If you still get the same network error after installing the OpenSSL libraries then you also need to install the Microsoft VC++ 2013 Redistributable component. From the download page select vcredist_x86.exe and run it to install.
-	If you cannot install the OpenSSL libraries or do not have an Internet connection on the computer used to run WSJT-X 2.0, you can download the LoTW file manually. Go to https://lotw.arrl.org/lotw-user-activity.csv in a web browser, download the file, then move it to the WSJT-X log files directory. This directory can be opened by selecting File | Open log directory.
-
-    WSJT-X expects your sound card to do its raw sampling at 48000 Hz. To ensure that this will be so when running under recent versions of Windows, open the system’s Sound control panel and select in turn the Recording and Playback tabs. Click on Properties, then Advanced, and select 16 bit, 48000 Hz (DVD Quality). Switch of all audio enhancement features for these devices.
-
-    You can uninstall WSJT-X by clicking its Uninstall link in the Windows Start menu, or by using Uninstall a Program on the Windows Control Panel Programs and Features option or in Settings Apps on Windows 10.
-
-3.2. Linux
+### 3.2. Linux
 
 Debian, Ubuntu, and other Debian-based systems including Raspbian:
-	The project team release binary installer packages for Linux when a new WSJT-X release is announced, note that these are built to target one contemporary version of a Linux distribution. Although these may work on newer Linux versions or even different distributions, it is unlikely that they will work on older versions. Check the notes provided with the release for details of the targeted Linux distributions and versions. If the binary package is not compatible with your Linux distribution or version you must build the application from sources.
 
-    32-bit: wsjtx_2.0.1_i386.deb
+> :loudspeaker:
+> The project team release binary installer packages for Linux when a new WSJT-X release is announced, note that these are built to target one contemporary version of a Linux distribution. Although these may work on newer Linux versions or even different distributions, it is unlikely that they will work on older versions. Check the notes provided with the release for details of the targeted Linux distributions and versions. If the binary package is not compatible with your Linux distribution or version you must build the application from sources.
 
-        To install:
-        sudo dpkg -i wsjtx_2.0.1_i386.deb
-
-        Uninstall:
+* 32-bit: wsjtx_2.0.1_i386.deb
+    * To install:
+        ```
+        sudo dpkg -i wsjtx_2.0.1_i386.deb 
+        ```
+    * Uninstall:
+        ```
         sudo dpkg -P wsjtx
-
-    64-bit: wsjtx_2.0.1_amd64.deb
-
-        To install:
+        ```
+* 64-bit: wsjtx_2.0.1_amd64.deb
+    * To install:
+        ```
         sudo dpkg -i wsjtx_2.0.1_amd64.deb
-
-    64-bit: wsjtx_2.0.1_armhf.deb
-
-        To install:
+        ```
+* 64-bit: wsjtx_2.0.1_armhf.deb
+    * To install:
+        ```
         sudo dpkg -i wsjtx_2.0.1_armhf.deb
-
-        Uninstall:
+        ```
+    * Uninstall:
+        ```
         sudo dpkg -P wsjtx
+        ```
 
 You may also need to execute the following command in a terminal:
+```
 sudo apt install libqt5multimedia5-plugins libqt5serialport5 libqt5sql5-sqlite libfftw3-single3
+```
 
 Fedora, CentOS, Red Hat, and other rpm-based systems:
-
-    32-bit: wsjtx-2.0.1-i686.rpm
-
-        To install:
+* 32-bit: wsjtx-2.0.1-i686.rpm
+    * To install:
+        ```
         sudo rpm -i wsjtx-2.0.1-i686.rpm
-
-        Uninstall:
+        ```
+    * Uninstall:
+        ```
         sudo rpm -e wsjtx
-
-    64-bit: wsjtx-2.0.1-x86_64.rpm
-
-        To install:
+        ```
+* 64-bit: wsjtx-2.0.1-x86_64.rpm
+    * To install:
+        ```
         sudo rpm -i wsjtx-2.0.1-x86_64.rpm
-
-        Uninstall:
+        ```
+    * Uninstall:
+        ```
         sudo rpm -e wsjtx
+        ```
 
 You may also need to execute the following command in a terminal:
+```
 sudo dnf install fftw-libs-single qt5-qtmultimedia qt5-qtserialport
-3.3. OS X and macOS
+```
 
-OS X 10.10 and later: Download the file wsjtx-2.0.1-Darwin.dmg to your desktop, double-click on it and consult its ReadMe file for important installation notes.
+### 3.3. OS X and macOS
 
-If you have already installed a previous version, you can retain it by changing its name in the Applications folder (say, from WSJT-X to WSJT-X_1.9). You can then proceed to the installation phase.
+**OS X 10.10** and later: Download the file [wsjtx-2.0.1-Darwin.dmg](http://physics.princeton.edu/pulsar/K1JT/wsjtx-2.0.1-Darwin.dmg) to your desktop, double-click on it and consult its ReadMe file for important installation notes.
+
+If you have already installed a previous version, you can retain it by changing its name in the **Applications** folder (say, from *WSJT-X* to *WSJT-X_1.9*). You can then proceed to the installation phase.
 
 Take note also of the following:
+* Use the Mac’s **Audio MIDI Setup** utility to configure your sound card for 48000 Hz, two-channel, 16-bit format.
 
-    Use the Mac’s Audio MIDI Setup utility to configure your sound card for 48000 Hz, two-channel, 16-bit format.
+> :loudspeaker:
+> If you are using macOS with an external audio device and find that Tx audio spontaneously switches to the motherboard sound device after a few transmissions, try setting the sample rate to 44100 Hz rather than the otherwise recommended 48000 Hz.
 
-	If you are using macOS with an external audio device and find that Tx audio spontaneously switches to the motherboard sound device after a few transmissions, try setting the sample rate to 44100 Hz rather than the otherwise recommended 48000 Hz.
-
-    Use System Preferences to select an external time source to keep your system clock synchronized to UTC.
-
-    To uninstall simply drag the WSJT-X application from Applications to the Trash Can.
+* Use **System Preferences** to select an external time source to keep your system clock synchronized to UTC.
+* To uninstall simply drag the *WSJT-X* application from **Applications** to the **Trash Can**.
 
 4. Settings
 
