@@ -360,35 +360,37 @@ Stations who are known to have uploaded their logs to the ARRL LoTW QSL matching
 
 * Check **Fox** if you are a DXpedition station operating in FT8 DXpedition Mode. Check **Hound** if you wish to make QSOs with such a Fox. Be sure to read the operating instructions for [FT8 DXpedition Mode](http://physics.princeton.edu/pulsar/k1jt/FT8_DXpedition_Mode.pdf).
 
-5. Transceiver Setup
-Receiver Noise Level
+## 5. Transceiver Setup
 
-    If it is not already highlighted in green, click the Monitor button to start normal receive operation.
+#### Receiver Noise Level
 
-    Be sure your transceiver is set to USB (or USB Data) mode.
+* If it is not already highlighted in green, click the **Monitor** button to start normal receive operation.
 
-    Use the receiver gain controls and/or the computer’s audio mixer controls to set the background noise level (scale at lower left of main window) to around 30 dB when no signals are present. It is usually best to turn AGC off or reduce the RF gain control to minimize AGC action.
-    	The PC audio mixer normally has two sliders, one for each application attached which should be set to maximum (0dB FS) as it cannot help with distortion from overly high or low input levels from your receiver and another Master level which is analogue attenuator on the sound card before the Analogue to Digital Converter (ADC). The Master level can be used to adjust the signal level received by WSJT-X.
+* Be sure your transceiver is set to **USB** (or **USB Data**) mode.
 
-Bandwidth and Frequency Setting
+* Use the receiver gain controls and/or the computer’s audio mixer controls to set the background noise level (scale at lower left of main window) to around 30 dB when no signals are present. It is usually best to turn AGC off or reduce the RF gain control to minimize AGC action.
+    > :bell:
+    > The PC audio mixer normally has two sliders, one for each application attached which should be set to maximum (0dB FS) as it cannot help with distortion from overly high or low input levels from your receiver and another **Master** level which is analogue attenuator on the sound card before the Analogue to Digital Converter (ADC). The **Master** level can be used to adjust the signal level received by *WSJT-X*.
 
-    If your transceiver offers more than one bandwidth setting in USB mode, it may be advantageous to choose the widest one possible, up to about 5 kHz. This choice has the desirable effect of allowing the Wide Graph (waterfall and 2D spectrum) to display the conventional JT65 and JT9 sub-bands simultaneously on most HF bands. Further details are provided in the Basic Operating Tutorial. A wider displayed bandwidth may also be helpful at VHF and above, where FT8, JT4, JT65, and QRA64 signals may be found over much wider ranges of frequencies.
+#### Bandwidth and Frequency Setting
 
-    If you have only a standard SSB filter you won’t be able to display more than about 2.7 kHz bandwidth. Depending on the exact dial frequency setting, on HF bands you can display the full sub-band generally used for one mode.
+* If your transceiver offers more than one bandwidth setting in USB mode, it may be advantageous to choose the widest one possible, up to about 5 kHz. This choice has the desirable effect of allowing the **Wide Graph** (waterfall and 2D spectrum) to display the conventional JT65 and JT9 sub-bands simultaneously on most HF bands. Further details are provided in the [Basic Operating Tutorial](http://physics.princeton.edu/pulsar/k1jt/wsjtx-doc/wsjtx-main-2.0.1.html#TUTORIAL). A wider displayed bandwidth may also be helpful at VHF and above, where FT8, JT4, JT65, and QRA64 signals may be found over much wider ranges of frequencies.
 
-    Of course, you might prefer to concentrate on one mode at a time, setting your dial frequency to (say) 14.074 for FT8, 14.076 for JT65, or 14.078 for JT9. Present conventions have the nominal JT9 dial frequency 2 kHz higher than the JT65 dial frequency on most bands, and the FT8 frequency 2 kHz lower.
+* If you have only a standard SSB filter you won’t be able to display more than about 2.7 kHz bandwidth. Depending on the exact dial frequency setting, on HF bands you can display the full sub-band generally used for one mode.
 
-Transmitter Audio Level
+* Of course, you might prefer to concentrate on one mode at a time, setting your dial frequency to (say) 14.074 for FT8, 14.076 for JT65, or 14.078 for JT9. Present conventions have the nominal JT9 dial frequency 2 kHz higher than the JT65 dial frequency on most bands, and the FT8 frequency 2 kHz lower.
 
-    Click the Tune button on the main screen to switch the radio into transmit mode and generate a steady audio tone.
+#### Transmitter Audio Level
 
-    Listen to the generated audio tone using your radio’s Monitor facility. The transmitted tone should be perfectly smooth, with no clicks or glitches. Make sure that this is true even when you simultaneously use the computer to do other tasks such as email, web browsing, etc..
+* Click the **Tune** button on the main screen to switch the radio into transmit mode and generate a steady audio tone.
 
-    Adjust the Pwr slider (at right edge of main window) downward from its maximum until the RF output from your transmitter falls slightly. This is generally a good level for audio drive.
+* Listen to the generated audio tone using your radio’s **Monitor** facility. The transmitted tone should be perfectly smooth, with no clicks or glitches. Make sure that this is true even when you simultaneously use the computer to do other tasks such as email, web browsing, etc..
 
-    Toggle the Tune button once more or click Halt Tx to stop your test transmission.
+* Adjust the **Pwr** slider (at right edge of main window) downward from its maximum until the RF output from your transmitter falls slightly. This is generally a good level for audio drive.
 
-6. Basic Operating Tutorial
+* Toggle the **Tune** button once more or click **Halt Tx** to stop your test transmission.
+
+## 6. Basic Operating Tutorial
 
 This section introduces the basic user controls and program behavior of WSJT-X, with particular emphasis on the JT9, JT65, and FT8 modes. We suggest that new users should go through the full HF-oriented tutorial, preferably while at your radio. Note that as of late 2018, digital usage on the HF bands has mostly moved from JT65 and JT9 to FT8. So you may wish to pay particular attention to FT8, in Section 6.6.
 
