@@ -1,60 +1,56 @@
 # WSJT-X 2.0 User Guide
 Joseph H Taylor, Jr, K1JT version 2.0.1 
 
----
-
 ## 1. Introduction
 
-WSJT-X is a computer program designed to facilitate basic amateur radio communication using very weak signals. The first four letters in the program name stand for “Weak Signal communication by K1JT,” while the suffix “-X” indicates that WSJT-X started as an extended and experimental branch of the program WSJT.
+WSJT-X is a computer program designed to facilitate basic amateur radio communication using very weak signals. The first four letters in the program name stand for “**W**eak **S**ignal communication by K1**JT**,” while the suffix “-X” indicates that WSJT-X started as an extended and experimental branch of the program *WSJT*.
 
-WSJT-X Version 2.0 offers nine different protocols or modes: FT8, JT4, JT9, JT65, QRA64, ISCAT, MSK144, WSPR, and Echo. The first five are designed for making reliable QSOs under extreme weak-signal conditions. They use nearly identical message structure and source encoding. JT65 and QRA64 were designed for EME (“moonbounce”) on the VHF/UHF bands and have also proven very effective for worldwide QRP communication on the HF bands. QRA64 has a number of advantages over JT65, including better performance on the very weakest signals. We imagine that over time it may replace JT65 for EME use. JT9 was originally designed for the LF, MF, and lower HF bands. Its submode JT9A is 2 dB more sensitive than JT65 while using less than 10% of the bandwidth. JT4 offers a wide variety of tone spacings and has proven highly effective for EME on microwave bands up to 24 GHz. These four “slow” modes use one-minute timed sequences of alternating transmission and reception, so a minimal QSO takes four to six minutes — two or three transmissions by each station, one sending in odd UTC minutes and the other even. FT8 is operationally similar but four times faster (15-second T/R sequences) and less sensitive by a few dB. On the HF bands, world-wide QSOs are possible with any of these modes using power levels of a few watts (or even milliwatts) and compromise antennas. On VHF bands and higher, QSOs are possible (by EME and other propagation types) at signal levels 10 to 15 dB below those required for CW.
+WSJT-X Version 2.0 offers nine different protocols or modes: **FT8**, **JT4**, **JT9**, **JT65**, **QRA64**, **ISCAT**, **MSK144**, **WSPR**, and **Echo**. The first five are designed for making reliable QSOs under extreme weak-signal conditions. They use nearly identical message structure and source encoding. JT65 and QRA64 were designed for EME (“moonbounce”) on the VHF/UHF bands and have also proven very effective for worldwide QRP communication on the HF bands. QRA64 has a number of advantages over JT65, including better performance on the very weakest signals. We imagine that over time it may replace JT65 for EME use. JT9 was originally designed for the LF, MF, and lower HF bands. Its submode JT9A is 2 dB more sensitive than JT65 while using less than 10% of the bandwidth. JT4 offers a wide variety of tone spacings and has proven highly effective for EME on microwave bands up to 24 GHz. These four “slow” modes use one-minute timed sequences of alternating transmission and reception, so a minimal QSO takes four to six minutes — two or three transmissions by each station, one sending in odd UTC minutes and the other even. FT8 is operationally similar but four times faster (15-second T/R sequences) and less sensitive by a few dB. On the HF bands, world-wide QSOs are possible with any of these modes using power levels of a few watts (or even milliwatts) and compromise antennas. On VHF bands and higher, QSOs are possible (by EME and other propagation types) at signal levels 10 to 15 dB below those required for CW.
 
-ISCAT, MSK144, and optionally submodes JT9E-H are “fast” protocols designed to take advantage of brief signal enhancements from ionized meteor trails, aircraft scatter, and other types of scatter propagation. These modes use timed sequences of 5, 10, 15, or 30 s duration. User messages are transmitted repeatedly at high rate (up to 250 characters per second, for MSK144) to make good use of the shortest meteor-trail reflections or “pings”. ISCAT uses free-form messages up to 28 characters long, while MSK144 uses the same structured messages as the slow modes and optionally an abbreviated format with hashed callsigns.
+**ISCAT**, **MSK144**, and optionally submodes **JT9E-H** are “fast” protocols designed to take advantage of brief signal enhancements from ionized meteor trails, aircraft scatter, and other types of scatter propagation. These modes use timed sequences of 5, 10, 15, or 30 s duration. User messages are transmitted repeatedly at high rate (up to 250 characters per second, for MSK144) to make good use of the shortest meteor-trail reflections or “pings”. ISCAT uses free-form messages up to 28 characters long, while MSK144 uses the same structured messages as the slow modes and optionally an abbreviated format with hashed callsigns.
 
-WSPR (pronounced “whisper”) stands for Weak Signal Propagation Reporter. The WSPR protocol was designed for probing potential propagation paths using low-power transmissions. WSPR messages normally carry the transmitting station’s callsign, grid locator, and transmitter power in dBm, and they can be decoded at signal-to-noise ratios as low as -31 dB in a 2500 Hz bandwidth. WSPR users with internet access can automatically upload reception reports to a central database called WSPRnet that provides a mapping facility, archival storage, and many other features.
+**WSPR** (pronounced “whisper”) stands for **W**eak **S**ignal **P**ropagation **R**eporter. The WSPR protocol was designed for probing potential propagation paths using low-power transmissions. WSPR messages normally carry the transmitting station’s callsign, grid locator, and transmitter power in dBm, and they can be decoded at signal-to-noise ratios as low as -31 dB in a 2500 Hz bandwidth. WSPR users with internet access can automatically upload reception reports to a central database called [WSPRnet](http://wsprnet.org/drupal/) that provides a mapping facility, archival storage, and many other features.
 
-Echo mode allows you to detect and measure your own station’s echoes from the moon, even if they are far below the audible threshold.
+**Echo** mode allows you to detect and measure your own station’s echoes from the moon, even if they are far below the audible threshold.
 
-WSJT-X provides spectral displays for receiver passbands as wide as 5 kHz, flexible rig control for nearly all modern radios used by amateurs, and a wide variety of special aids such as automatic Doppler tracking for EME QSOs and Echo testing. The program runs equally well on Windows, Macintosh, and Linux systems, and installation packages are available for all three platforms.
+*WSJT-X* provides spectral displays for receiver passbands as wide as 5 kHz, flexible rig control for nearly all modern radios used by amateurs, and a wide variety of special aids such as automatic Doppler tracking for EME QSOs and Echo testing. The program runs equally well on Windows, Macintosh, and Linux systems, and installation packages are available for all three platforms.
 
-Version Numbers: WSJT-X release numbers have major, minor, and patch numbers separated by periods: for example, WSJT-X Version 1.9.0. Temporary “beta” release candidates are sometimes made in advance of a new general-availability release, in order to obtain user feedback. For example, version 1.9.0-rc1, 1.9.0-rc2, etc., would be beta releases leading up to the final release of v1.9.0. Release candidates should be used only during a short testing period. They carry an implied obligation to provide feedback to the program development group. Candidate releases should not be used on the air after a full release with the same number has been made.
+**Version Numbers**: WSJT-X release numbers have major, minor, and patch numbers separated by periods: for example, WSJT-X Version 1.9.0. Temporary “beta” release candidates are sometimes made in advance of a new general-availability release, in order to obtain user feedback. For example, version 1.9.0-rc1, 1.9.0-rc2, etc., would be beta releases leading up to the final release of v1.9.0. Release candidates should be used only during a short testing period. They carry an implied obligation to provide feedback to the program development group. Candidate releases should not be used on the air after a full release with the same number has been made.
 
 ### 1.1. New in Version 2.0.1
 
 For quick reference, here’s a short list of features and capabilities added to WSJT-X since Version 1.9.1:
 
-    New FT8 and MSK144 protocols with 77-bit payloads permit these enhancements:
+* New FT8 and MSK144 protocols with 77-bit payloads permit these enhancements:
+    * Optimized contest messages for NA VHF, EU VHF, Field Day, RTTY Roundup
+    * Full support for "/R" and "/P" calls in relevant contests
+    * New logging features for contesting
+    * Integration with [N1MM Logger+](https://n1mm.hamdocs.com/tiki-index.php) and [Writelog](https://writelog.com/) for contesting
+    * Improved support for compound and nonstandard callsigns
+    * Nearly equal (or better) sensitivity compared to old protocols
+    * Lower false decode rates
+* Improved color highlighting of received messages
+* Improved WSPR sensitivity
+* Expanded and improved UDP messages sent to companion programs
+* Bug fixes and other minor tweaks to user interface
 
-        Optimized contest messages for NA VHF, EU VHF, Field Day, RTTY Roundup
+> Note that for FT8 and MSK144 there is no backward compatibility with WSJT-X 1.9.1 and earlier. Everyone using these modes should upgrade to WSJT-X 2.0 by January 1, 2019.
 
-        Full support for "/R" and "/P" calls in relevant contests
+> WSJT-X Version 2.0 drops support for Apple Mac OS X 10.9 (Mavericks). It is possible to build from source for this operating system version but the DMG installer package requires 10.10 or later.
 
-        New logging features for contesting
-
-        Integration with N1MM Logger+ and Writelog for contesting
-
-        Improved support for compound and nonstandard callsigns
-
-        Nearly equal (or better) sensitivity compared to old protocols
-
-        Lower false decode rates
-
-    Improved color highlighting of received messages
-
-    Improved WSPR sensitivity
-
-    Expanded and improved UDP messages sent to companion programs
-
-    Bug fixes and other minor tweaks to user interface
-
-	Note that for FT8 and MSK144 there is no backward compatibility with WSJT-X 1.9.1 and earlier. Everyone using these modes should upgrade to WSJT-X 2.0 by January 1, 2019.
-	WSJT-X Version 2.0 drops support for Apple Mac OS X 10.9 (Mavericks). It is possible to build from source for this operating system version but the DMG installer package requires 10.10 or later.
 ### 1.2. Documentation Conventions
 
 In this manual the following icons call attention to particular types of information:
-	Notes containing information that may be of interest to particuar classes of users.
-	Tips on program features or capabilities that might otherwise be overlooked.
-	Warnings about usage that could lead to undesired consequences.
+
+> :loudspeaker: 
+> Notes containing information that may be of interest to particuar classes of users.
+
+> :bell:
+> Tips on program features or capabilities that might otherwise be overlooked.
+
+> :warning:
+> Warnings about usage that could lead to undesired consequences.
+
 1.3. How You Can Contribute
 
 WSJT-X is part of an open-source project released under the GNU General Public License (GPLv3). If you have programming or documentation skills or would like to contribute to the project in other ways, please make your interests known to the development team. The project’s source-code repository can be found at SourceForge, and communication among the developers takes place on the email reflector wsjt-devel@lists.sourceforge.net. Bug reports and suggestions for new features, improvements to the WSJT-X User Guide, etc., may also be sent to the WSJT Group email reflector. You must join the relevant group before posting to either email list.
