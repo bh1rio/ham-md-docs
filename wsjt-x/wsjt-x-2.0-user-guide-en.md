@@ -221,7 +221,7 @@ WSJT-X offers CAT (Computer Aided Transceiver) control of relevant features of m
     * Force Control Lines: A few station setups require the CAT serial port’s RTS and/or DTR control lines to be forced high or low. Check these boxes only if you are sure they are needed (for example, to power the radio serial interface).
 
 * PTT Method: select **VOX**, **CAT**, **DTR**, or **RTS** as the desired method for T/R switching. If your choice is **DTR** or **RTS**, select the desired serial port (which may be the same one as used for CAT control).
-    > :loudspeak:
+    > :loudspeaker:
     > When using a proxy application for rig control, CAT is usually the correct option for PTT Method assuming the proxy application is capable of keying your transceiver idependently.
 
 * *Transmit Audio Source*: some radios permit you to choose the connector that will accept Tx audio. If this choice is enabled, select **Rear/Data** or **Front/Mic**.
@@ -333,30 +333,32 @@ Stations who are known to have uploaded their logs to the ARRL LoTW QSL matching
 * Adjust **Age of of last upload less than** to set the period within which a station must have uploaded their log to LoTW to trigger highlighting.
 
 ### 4.8. Advanced
-Settings Advanced
 
-JT65 decoding parameters
+![Settings Advanced](images/4-8.png)
 
-    Random erasure patterns logarithmically scales the number of pseudo-random trials used by the Franke-Taylor JT65 decoder. Larger numbers give slightly better sensitivity but take longer. For most purposes a good setting is 6 or 7.
+*JT65 decoding parameters*
 
-    Aggressive decoding level sets the threshold for acceptable decodes using Deep Search. Higher numbers will display results with lower confidence levels.
+* **Random erasure patterns** logarithmically scales the number of pseudo-random trials used by the Franke-Taylor JT65 decoder. Larger numbers give slightly better sensitivity but take longer. For most purposes a good setting is 6 or 7.
 
-    Check Two-pass decoding to enable a second decoding pass after signals producing first-pass decodes have been subtracted from the received data stream.
+* **Aggressive decoding** level sets the threshold for acceptable decodes using Deep Search. Higher numbers will display results with lower confidence levels.
 
-Miscellaneous
+* Check **Two-pass decoding** to enable a second decoding pass after signals producing first-pass decodes have been subtracted from the received data stream.
 
-    Set a positive number in Degrade S/N of .wav file to add known amounts of pseudo-random noise to data read from a .wav file. To ensure that the resulting S/N degradation is close to the requested number of dB, set Receiver bandwidth to your best estimate of the receiver’s effective noise bandwidth.
+*Miscellaneous*
 
-    Set Tx delay to a number larger than the default 0.2 s to create a larger delay between execution of a command to enable PTT and onset of Tx audio.
-    	For the health of your T/R relays and external preamplifier, we strongly recommend using a hardware sequencer and testing to make sure that sequencing is correct.
+* Set a positive number in **Degrade S/N of .wav file** to add known amounts of pseudo-random noise to data read from a .wav file. To ensure that the resulting S/N degradation is close to the requested number of dB, set **Receiver bandwidth** to your best estimate of the receiver’s effective noise bandwidth.
 
-    Check x 2 Tone spacing or x 4 Tone spacing to generate Tx audio with twice or four times the normal tone spacing. This feature is intended for use with specialized LF/MF transmitters that divide generated frequencies by 2 or 4 as part of the transmission process.
+* Set **Tx delay** to a number larger than the default 0.2 s to create a larger delay between execution of a command to enable PTT and onset of Tx audio.
+    > :loudspeaker:
+    > For the health of your T/R relays and external preamplifier, we strongly recommend using a hardware sequencer and testing to make sure that sequencing is correct.
 
-Special Operating Activity: Generation of FT8 and MSk144 messages
+* Check **x 2 Tone spacing** or **x 4 Tone spacing** to generate Tx audio with twice or four times the normal tone spacing. This feature is intended for use with specialized LF/MF transmitters that divide generated frequencies by 2 or 4 as part of the transmission process.
 
-    Check this box and select the type of activity to enable auto-generation of special message formats for contesting and DXpeditions. For ARRL Field Day, enter your operating Class and ARRL/RAC section; for ARRL RTTY Roundup, enter your state or province. Use “DX” for section or state if you are not in the US or Canada. In the RTTY Roundup, Stations in Alaska and Hawaii should enter “DX”.
+*Special Operating Activity: Generation of FT8 and MSk144 messages*
 
-    Check Fox if you are a DXpedition station operating in FT8 DXpedition Mode. Check Hound if you wish to make QSOs with such a Fox. Be sure to read the operating instructions for FT8 DXpedition Mode.
+* Check this box and select the type of activity to enable auto-generation of special message formats for contesting and DXpeditions. For **ARRL Field Day**, enter your operating Class and ARRL/RAC section; for **ARRL RTTY Roundup**, enter your state or province. Use “DX” for section or state if you are not in the US or Canada. In the RTTY Roundup, Stations in Alaska and Hawaii should enter “DX”.
+
+* Check **Fox** if you are a DXpedition station operating in FT8 DXpedition Mode. Check **Hound** if you wish to make QSOs with such a Fox. Be sure to read the operating instructions for [FT8 DXpedition Mode](http://physics.princeton.edu/pulsar/k1jt/FT8_DXpedition_Mode.pdf).
 
 5. Transceiver Setup
 Receiver Noise Level
