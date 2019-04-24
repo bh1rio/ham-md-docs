@@ -177,143 +177,162 @@ Take note also of the following:
 * Use **System Preferences** to select an external time source to keep your system clock synchronized to UTC.
 * To uninstall simply drag the *WSJT-X* application from **Applications** to the **Trash Can**.
 
-4. Settings
+## 4. Settings
 
-Select Settings from the File menu or by typing F2. (On Macintosh select Preferences from the WSJT-X menu, or use the keyboard shortcut Cmd+,). The following sections describe setup options available on each of eight tabs selectable near the top of the window.
-4.1. General
-Settings Window
+Select **Settings** from the **File** menu or by typing **F2**. (On Macintosh select **Preferences** from the *WSJT-X* menu, or use the keyboard shortcut **Cmd+**,). The following sections describe setup options available on each of eight tabs selectable near the top of the window.
 
-Select the General tab on the Settings window. Under Station Details enter your callsign, grid locator (preferably the 6-character locator) and IARU Region number. Region 1 is Europe, Africa, the Middle East, and Northern Asia; Region 2 the Americas; and Region 3 Southern Asia and the Pacific. This information will be sufficient for initial tests.
+### 4.1. General
 
-Meanings of remaining options on the General tab should be self-explanatory after you have made some QSOs using WSJT-X. You may return to set these options to your preferences later.
-	If you are using a callsign with an add-on prefix or suffix, or wish to work a station using such a call, be sure to read the section Compound Callsigns.
-	Checking Enable VHF/UHF/Microwave features necessarily disables the wideband multi-decode capability of JT65. In most circumstances you should turn this feature off when operating at HF.
-4.2. Radio
-Radio Tab
+![Settings Window](images/4-1.png)
 
-WSJT-X offers CAT (Computer Aided Transceiver) control of relevant features of most modern transceivers. To configure the program for your radio, select the Radio tab.
+Select the **General** tab on the **Settings** window. Under *Station Details* enter your callsign, grid locator (preferably the 6-character locator) and IARU Region number. Region 1 is Europe, Africa, the Middle East, and Northern Asia; Region 2 the Americas; and Region 3 Southern Asia and the Pacific. This information will be sufficient for initial tests.
 
-    Select your radio type from the drop-down list labeled Rig, or None if you do not wish to use CAT control.
+Meanings of remaining options on the **General** tab should be self-explanatory after you have made some QSOs using *WSJT-X*. You may return to set these options to your preferences later.
 
-        Alternatively, if you have configured your station for control by DX Lab Suite Commander, Flrig, Ham Radio Deluxe, Hamlib NET rigctl, or Omni-Rig, you may select one of those program names from the Rig list. In these cases the entry field immediately under CAT Control will be relabeled as Network Server. Leave this field blank to access the default instance of your control program, running on the same computer. If the control program runs on a different computer and/or port, specify it here. Hover the mouse pointer over the entry field to see the required formatting details.
+> :loudspeaker:	
+> If you are using a callsign with an add-on prefix or suffix, or wish to work a station using such a call, be sure to read the section [Compound Callsigns](http://physics.princeton.edu/pulsar/k1jt/wsjtx-doc/wsjtx-main-2.0.1.html#COMP-CALL).
 
-        Select Omni-Rig Rig 1 or Omni-Rig Rig 2 to connect to an Omni-Rig server installed on the same computer. Omni-Rig will be started automatically by WSJT-X.
-    	Omni-Rig is available only under Windows.
+> :loudspeaker:
+> Checking **Enable VHF/UHF/Microwave features** necessarily disables the wideband multi-decode capability of JT65. In most circumstances you should turn this feature off when operating at HF.
 
-    Set Poll Interval to the desired interval for WSJT-X to query your radio. For most radios a small number (say, 1 – 3 s) is suitable.
+### 4.2. Radio
+![Radio Tab](images/4-2.png)
 
-    CAT Control: To have WSJT-X control the radio directly rather than though another program, make the following settings:
+WSJT-X offers CAT (Computer Aided Transceiver) control of relevant features of most modern transceivers. To configure the program for your radio, select the **Radio** tab.
+* Select your radio type from the drop-down list labeled **Rig**, or **None** if you do not wish to use CAT control.
+    * Alternatively, if you have configured your station for control by **DX Lab Suite Commander**, **Flrig**, **Ham Radio Deluxe**, **Hamlib NET rigctl**, or **Omni-Rig**, you may select one of those program names from the **Rig** list. In these cases the entry field immediately under *CAT* Control will be relabeled as **Network Server**. Leave this field blank to access the default instance of your control program, running on the same computer. If the control program runs on a different computer and/or port, specify it here. Hover the mouse pointer over the entry field to see the required formatting details.
 
-        Select the Serial Port or Network Server including the service port number used to communicate with your radio.
-        	A special value of USB is available for custom USB devices like those used by some SDR kits. This is not the same a virtual serial port provided by USB connected transcivers and CAT interfaces, for those use the COM or serial port name that refers to them.
+    * Select **Omni-Rig Rig 1** or **Omni-Rig Rig 2** to connect to an *Omni-Rig* server installed on the same computer. *Omni-Rig* will be started automatically by *WSJT-X*.
+    	> :loudspeaker:
+        > Omni-Rig is available only under Windows.
 
-        Serial Port Parameters: Set values for Baud Rate, Data Bits, Stop Bits, and Handshake method. Consult your radio’s user *guide for the proper parameter values.
-    	CAT interfaces that require handshaking will be non-responsive until the correct Handshake setting is applied.
+* Set **Poll Interval** to the desired interval for *WSJT-X* to query your radio. For most radios a small number (say, 1 – 3 s) is suitable.
 
-        Force Control Lines: A few station setups require the CAT serial port’s RTS and/or DTR control lines to be forced high or low. Check these boxes only if you are sure they are needed (for example, to power the radio serial interface).
+* *CAT* Control: To have *WSJT-X* control the radio directly rather than though another program, make the following settings:
 
-    PTT Method: select VOX, CAT, DTR, or RTS as the desired method for T/R switching. If your choice is DTR or RTS, select the desired serial port (which may be the same one as used for CAT control).
-    	When using a proxy application for rig control, CAT is usually the correct option for PTT Method assuming the proxy application is capable of keying your transceiver idependently.
+    * Select the **Serial Port** or **Network Server** including the service port number used to communicate with your radio.
+        > :loudspeaker:
+        > A special value of **USB** is available for custom USB devices like those used by some SDR kits. This is not the same a virtual serial port provided by USB connected transcivers and CAT interfaces, for those use the COM or serial port name that refers to them.
 
-    Transmit Audio Source: some radios permit you to choose the connector that will accept Tx audio. If this choice is enabled, select Rear/Data or Front/Mic.
+    * *Serial Port Parameters*: Set values for **Baud Rate**, **Data Bits**, **Stop Bits**, and **Handshake** method. Consult your radio’s user *guide for the proper parameter values.
+    	> :loudspeaker:
+        > CAT interfaces that require handshaking will be non-responsive until the correct **Handshake** setting is applied.
 
-    Mode: WSJT-X uses upper sideband mode for both transmitting and receiving. Select USB, or choose Data/Pkt if your radio offers such an option and uses it to enable the rear-panel audio line input. Some radios also offer wider and/or flatter passbands when set to Data/Pkt mode. Select None if you do not want WSJT-X to change the radio’s Mode setting.
+    * Force Control Lines: A few station setups require the CAT serial port’s RTS and/or DTR control lines to be forced high or low. Check these boxes only if you are sure they are needed (for example, to power the radio serial interface).
 
-    Split Operation: Significant advantages result from using Split mode (separate VFOs for Rx and Tx) if your radio supports it. If it does not, WSJT-X can emulate such behavior. Either method will result in a cleaner transmitted signal, by keeping the Tx audio always in the range 1500 to 2000 Hz so that audio harmonics cannot pass through the Tx sideband filter. Select Rig to use the radio’s Split mode, or Fake It to have WSJT-X adjust the VFO frequency as needed, when T/R switching occurs. Choose None if you do not wish to use split operation.
+* PTT Method: select **VOX**, **CAT**, **DTR**, or **RTS** as the desired method for T/R switching. If your choice is **DTR** or **RTS**, select the desired serial port (which may be the same one as used for CAT control).
+    > :loudspeak:
+    > When using a proxy application for rig control, CAT is usually the correct option for PTT Method assuming the proxy application is capable of keying your transceiver idependently.
 
-When all required settings have been made, click Test CAT to test communication between WSJT-X and your radio. The button should turn green to indicate that proper communication has been established. Failure of the CAT-control test turns the button red and displays an error message. After a successful CAT test, toggle the Test PTT button to confirm that your selected method of T/R control is working properly. (If you selected VOX for PTT Method, you can test T/R switching later by using the Tune button on the main window.)
-4.3. Audio
-_WSJT-X_ Audio Configuration Screen
+* *Transmit Audio Source*: some radios permit you to choose the connector that will accept Tx audio. If this choice is enabled, select **Rear/Data** or **Front/Mic**.
+* *Mode*: *WSJT-X* uses upper sideband mode for both transmitting and receiving. Select **USB**, or choose **Data/Pkt** if your radio offers such an option and uses it to enable the rear-panel audio line input. Some radios also offer wider and/or flatter passbands when set to **Data/Pkt** mode. Select None if you do not want *WSJT-X* to change the radio’s Mode setting.
+* *Split Operation*: Significant advantages result from using **Split** mode (separate VFOs for Rx and Tx) if your radio supports it. If it does not, *WSJT-X* can emulate such behavior. Either method will result in a cleaner transmitted signal, by keeping the Tx audio always in the range 1500 to 2000 Hz so that audio harmonics cannot pass through the Tx sideband filter. Select **Rig** to use the radio’s Split mode, or **Fake It** to have *WSJT-X* adjust the VFO frequency as needed, when T/R switching occurs. Choose **None** if you do not wish to use split operation.
 
-Select the Audio tab to configure your sound system.
+When all required settings have been made, click **Test CAT** to test communication between *WSJT-X* and your radio. The button should turn green to indicate that proper communication has been established. Failure of the CAT-control test turns the button red and displays an error message. After a successful CAT test, toggle the **Test PTT** button to confirm that your selected method of T/R control is working properly. (If you selected **VOX** for *PTT Method*, you can test T/R switching later by using the **Tune** button on the main window.)
 
-    Soundcard: Select the audio devices to be used for Input and Output. Usually the Mono settings will suffice, but in special cases you can choose Left, Right, or Both stereo channels.
+### 4.3. Audio
 
-        Be sure that your audio device is configured to sample at 48000 Hz, 16 bits.
-        	If you select the audio output device that is also your computer’s default audio device, be sure to turn off all system sounds to prevent inadvertently transmitting them over the air.
-        	Windows Vista and later may configure audio devices using the Texas Instruments PCM2900 series CODEC for microphone input rather line input. (This chip is used in many radios with built-in USB CODECs, as well as various other audio interfaces.) If you are using such a device, be sure to set the mic level in the Recording Device Properties to 0 dB.
+![_WSJT-X_ Audio Configuration Screen](images/4-3.png)
 
-    Save Directory: WSJT-X can save its received audio sequences as .wav files. A default directory for these files is provided; you can select another location if desired.
+Select the **Audio** tab to configure your sound system.
 
-    AzEl Directory: A file named azel.dat will appear in the specified directory. The file contains information usable by another program for automatic tracking of the Sun or Moon, as well as calculated Doppler shift for the specified EME path. The file is updated once per second whenever the Astronomical Data window is displayed.
+* *Soundcard*: Select the audio devices to be used for **Input** and **Output**. Usually the **Mono** settings will suffice, but in special cases you can choose **Left**, **Right**, or **Both** stereo channels.
+    * Be sure that your audio device is configured to sample at 48000 Hz, 16 bits.
+        > :warning:
+        > If you select the audio output device that is also your computer’s default audio device, be sure to turn off all system sounds to prevent inadvertently transmitting them over the air.
 
-    Remember power settings by band: Checking either of these will cause WSJT-X to remember the Pwr slider setting for that operation on a band-by-band basis. For example, when Tune is checked here and you click the Tune button on the main window, the power slider will change to the most recent setting used for Tune on the band in use.
+        > :loudspeaker:
+        > Windows Vista and later may configure audio devices using the Texas Instruments PCM2900 series CODEC for microphone input rather line input. (This chip is used in many radios with built-in USB CODECs, as well as various other audio interfaces.) If you are using such a device, be sure to set the mic level in the Recording Device Properties to 0 dB.
 
-4.4. Tx Macros
-Tx Macros Screen
+* *Save Directory*: *WSJT-X* can save its received audio sequences as ` .wav ` files. A default directory for these files is provided; you can select another location if desired.
 
-Tx Macros are an aid for sending brief, frequently used free-text messages such as the examples shown above.
+* *AzEl Directory*: A file named ` azel.dat ` will appear in the specified directory. The file contains information usable by another program for automatic tracking of the Sun or Moon, as well as calculated Doppler shift for the specified EME path. The file is updated once per second whenever the [Astronomical Data](http://physics.princeton.edu/pulsar/k1jt/wsjtx-doc/wsjtx-main-2.0.1.html#ASTRODATA) window is displayed.
 
-    To add a new message to the list, enter the desired text (up to 13 characters) in the entry field at top, then click Add.
+* *Remember power settings by band*: Checking either of these will cause *WSJT-X* to remember the **Pwr** slider setting for that operation on a band-by-band basis. For example, when **Tune** is checked here and you click the **Tune** button on the main window, the power slider will change to the most recent setting used for **Tune** on the band in use.
 
-    To remove an unwanted message, click on the message and then on Delete.
+### 4.4 Tx Macros
 
-    You can reorder your macro messages by using drag-and-drop. The new order will be preserved when WSJT-X is restarted.
+![Tx Macros Screen](images/4-4.png)
 
-    Messages can also be added from the main window’s Tx5 field on Tab 1 or the Free msg field on Tab 2. Simply hit [Enter] after the message has been entered.
+***Tx Macros*** are an aid for sending brief, frequently used free-text messages such as the examples shown above.
 
-4.5. Reporting
-Reporting Screen
+* To add a new message to the list, enter the desired text (up to 13 characters) in the entry field at top, then click ***Add***.
 
-    Logging: Choose any desired options from this group. Operators in a multi-operator station may wish to enter their home callsign as Op Call.
+* To remove an unwanted message, click on the message and then on ***Delete***.
 
-    Network Services: Check Enable PSK Reporter Spotting to send reception reports to the PSK Reporter mapping facility.
+* You can reorder your macro messages by using drag-and-drop. The new order will be preserved when *WSJT-X* is restarted.
 
-    UDP Server: This group of options controls the network name or address and port number used by a program that will receive status updates from WSJT-X. Cooperating applications like JTAlert use this feature to obtain information about a running WSJT-X instance. If you are using JTAlert, be sure to check the three boxes at lower right.
+* Messages can also be added from the main window’s ***Tx5*** field on Tab 1 or the **Free msg** field on Tab 2. Simply hit [Enter] after the message has been entered.
 
-    N1MM Logger+ Broadcasts: To send information on logged QSOs directly to N1MM Logger+, check the box and enter the IP address and port number for N1MM.
+### 4.5. Reporting
 
-4.6. Frequencies
-Frequency Screen
+![Reporting Screen](images/4-5.png)
 
-Working Frequencies: By default the Working Frequencies table contains a list of frequencies conventionally used for modes FT8, JT4, JT9, JT65, MSK144, WSPR, and Echo. Conventions may change with time or by user preference; you can modify the frequency table as desired.
+* *Logging*: Choose any desired options from this group. Operators in a multi-operator station may wish to enter their home callsign as **Op Call**.
 
-    To change an existing entry, double-click to edit it, type a desired frequency in MHz or select from the drop down list of options, then hit Enter on the keyboard. The program will format your changed entry appropriately.
+* *Network Services*: Check **Enable PSK Reporter Spotting** to send reception reports to the [PSK Reporter](http://pskreporter.info/pskmap.html) mapping facility.
 
-    To add a new entry, right-click anywhere on the frequency table and select Insert. Enter a frequency in MHz in the pop-up box and select the desired mode (or leave the Mode selection as All). Then click OK. The table may include more than one frequency for a given band.
+* *UDP Server*: This group of options controls the network name or address and port number used by a program that will receive status updates from *WSJT-X*. Cooperating applications like *JTAlert* use this feature to obtain information about a running *WSJT-X* instance. If you are using *JTAlert*, be sure to check the three boxes at lower right.
 
-    To delete an entry, right-click it and select Delete, multiple entries can be deleted in a single operation by selecting them before right-clicking.
+* *N1MM Logger+ Broadcasts*: To send information on logged QSOs directly to *N1MM Logger+*, check the box and enter the IP address and port number for *N1MM*.
 
-    Right-click any entry and click Reset button to return the table to its default configuration.
+### 4.6. Frequencies
+
+![Frequency Screen](images/4-6.png)
+
+*Working Frequencies*: By default the **Working Frequencies** table contains a list of frequencies conventionally used for modes FT8, JT4, JT9, JT65, MSK144, WSPR, and Echo. Conventions may change with time or by user preference; you can modify the frequency table as desired.
+
+* To change an existing entry, double-click to edit it, type a desired frequency in MHz or select from the drop down list of options, then hit **Enter** on the keyboard. The program will format your changed entry appropriately.
+
+* To add a new entry, right-click anywhere on the frequency table and select **Insert**. Enter a frequency in MHz in the pop-up box and select the desired mode (or leave the Mode selection as **All**). Then click **OK**. The table may include more than one frequency for a given band.
+
+* To delete an entry, right-click it and select **Delete**, multiple entries can be deleted in a single operation by selecting them before right-clicking.
+
+* Right-click any entry and click **Reset** button to return the table to its default configuration.
 
 Other more advanced maintenance operations are available on the right-click context menu that should be self-explanatory.
 
-Frequency Calibration: If you have calibrated your radio using WWV or other reliable frequency references, or perhaps with the technique described in Accurate Frequency Measurements with your WSPR Setup, enter the measured values for Intercept A and Slope B in the equation
+*Frequency Calibration*: If you have calibrated your radio using WWV or other reliable frequency references, or perhaps with the technique described in [Accurate Frequency Measurements with your WSPR Setup](http://www.physics.princeton.edu/pulsar/K1JT/FMT_User.pdf), enter the measured values for Intercept A and Slope B in the equation
 
+```
 Dial error = A + B*f
+```
 
 where “Dial error” and A are in Hz, f is frequency in MHz, and B is in parts per million (ppm). Frequency values sent to the radio and received from it will then be adjusted so that frequencies displayed by WSJT-X are accurate.
 
-Station Information: You can save Band, Offset and Antenna Description information for your station. The antenna information will be included in reception reports sent to PSK Reporter. By default the frequency offset for each band is zero. Nonzero offsets may be added if (for example) a transverter is in use.
+Station Information: You can save **Band**, **Offset** and **Antenna Description** information for your station. The antenna information will be included in reception reports sent to [PSK Reporter](http://pskreporter.info/pskmap.html). By default the frequency offset for each band is zero. Nonzero offsets may be added if (for example) a [transverter](http://physics.princeton.edu/pulsar/k1jt/wsjtx-doc/wsjtx-main-2.0.1.html#VHF_SETUP) is in use.
 
-    To simplify things you might want to delete any unwanted bands — for example, bands where you have no equipment. Then click on a Frequency entry and type Ctrl+A to “select all,” and drag-and-drop the entries onto the Station Information table. You can then add any transverter offsets and antenna details.
+* To simplify things you might want to delete any unwanted bands — for example, bands where you have no equipment. Then click on a **Frequency** entry and type **Ctrl+A** to “select all,” and drag-and-drop the entries onto the Station Information table. You can then add any transverter offsets and antenna details.
 
-    To avoid typing the same information many times, you can drag-and-drop entries between the lines of the Station Information table.
+* To avoid typing the same information many times, you can drag-and-drop entries between the lines of the Station Information table.
 
-    When all settings have been configured to your liking, click OK to dismiss the Settings window.
+* When all settings have been configured to your liking, click **OK** to dismiss the **Settings** window.
 
-4.7. Colors
-Colors Screen
-Decode Highlighting
+### 4.7. Colors
 
-    WSJT-X uses colors to highlight decoded CQ messages of particular interest. Check the box Show DXCC, grid, and worked-before status on the Settings | General tab, and any boxes of interest to you on the Colors tab. You can drag any line up or down to raise or lower its logical priority. Right-click any line to set a new foreground or background color. Foreground and background colors are applied separately, and careful choices of foreground, background, and priority can provide two indications of worked-before status.
+![Colors Screen](images/4-7.png)
 
-    Press the Reset Highlighting button to reset all of the color settings to default values.
+#### Decode Highlighting
 
-    Check Highlight by Mode if you wish worked before status to be per mode.
+* *WSJT-X* uses colors to highlight decoded CQ messages of particular interest. Check the box **Show DXCC, grid, and worked-before status** on the **Settings | General** tab, and any boxes of interest to you on the **Colors** tab. You can drag any line up or down to raise or lower its logical priority. Right-click any line to set a new foreground or background color. Foreground and background colors are applied separately, and careful choices of foreground, background, and priority can provide two indications of worked-before status.
 
-    Worked before status is calculated from your WSJT-X ADIF Logging file, you may replace ADIF log file with one exported from your station logging application, Rescan ADIF Log rebuilds the WSJT-X worked before indexes using the current ADIF log file.
-    	The WSJT-X ADIF file records must contain the "CALL" field. The "BAND", and "MODE", and "GRIDSQUARE" fields are optional depending on your DXing objectives. DXCC entity, continent, CQ, and ITU Zone data for call prefixes and certain well known overrides are derived from the cty.dat database which is bundled with WSJT-X (See Logging for details).
+* Press the **Reset Highlighting** button to reset all of the color settings to default values.
 
-Logbook of The World User Validation
+* Check **Highlight by Mode** if you wish worked before status to be per [mode](http://physics.princeton.edu/pulsar/k1jt/wsjtx-doc/wsjtx-main-2.0.1.html#INTRO).
+
+* Worked before status is calculated from your *WSJT-X* ADIF [Logging](http://physics.princeton.edu/pulsar/k1jt/wsjtx-doc/wsjtx-main-2.0.1.html#LOGGING) file, you may replace ADIF log file with one exported from your station logging application, **Rescan ADIF Log** rebuilds the WSJT-X worked before indexes using the current ADIF log file.
+    > :bell:
+    > The WSJT-X ADIF file records must contain the "CALL" field. The "BAND", and "MODE", and "GRIDSQUARE" fields are optional depending on your DXing objectives. DXCC entity, continent, CQ, and ITU Zone data for call prefixes and certain well known overrides are derived from the cty.dat database which is bundled with WSJT-X (See [Logging](http://physics.princeton.edu/pulsar/k1jt/wsjtx-doc/wsjtx-main-2.0.1.html#LOGGING) for details).
+
+#### Logbook of The World User Validation
 
 Stations who are known to have uploaded their logs to the ARRL LoTW QSL matching service can be highlighted. The data used to determine this is available on line.
 
-    Fetch Now will download a fresh dataset from the Users CSV file URL. The LoTW team normally update this data weekly.
+* **Fetch Now** will download a fresh dataset from the **Users CSV file URL**. The LoTW team normally update this data weekly.
 
-    Adjust Age of of last upload less than to set the period within which a station must have uploaded their log to LoTW to trigger highlighting.
+* Adjust **Age of of last upload less than** to set the period within which a station must have uploaded their log to LoTW to trigger highlighting.
 
-4.8. Advanced
+### 4.8. Advanced
 Settings Advanced
 
 JT65 decoding parameters
