@@ -84,7 +84,8 @@ Download and execute the package file wsjtx-2.0.1-win32.exe, following these ins
 > Your computer may be configured so that this directory is "invisible". It’s there, however, and accessible. An alternative (shortcut) directory name is "%LocalAppData%\WSJT-X\".
 
 * The built-in Windows facility for time synchronization is usually not adequate. We recommend the program *Meinberg NTP* (see [Network Time Protocol Setup](http://www.satsignal.eu/ntp/setup.html) for downloading and installation instructions) or *Dimension 4* from [Thinking Man Software](http://www.thinkman.com/dimension4/). Recent versions of Windows 10 are now shipped with a more capable Internet time synchronization service that is suitable if configured appropriately.
-![WSJT-X LoTW download TLS error](images/3-1.png)
+
+    ![WSJT-X LoTW download TLS error](images/3-1.png)
 
 * From this version onward *WSJT-X* requires the *OpenSSL* libraries to be installed. Suitable libraries may already be installed on your system, if they are not you will see this error shortly after startup. To fix this you need to install the *OpenSSL* libraries.
     * You can download a suitable *OpenSSL* package for from [Windows OpenSSL Packages](https://slproweb.com/products/Win32OpenSSL.html), you need the latest **Win32 v1.0.2 Lite** version (Note it is the Win32 package even if you are using a 64-bit Windows operating system) which at the time of writing was [Win32 OpenSSL Lite Package](https://slproweb.com/download/Win32OpenSSL_Light-1_0_2q.exe).
